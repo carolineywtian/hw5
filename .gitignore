@@ -1,0 +1,25 @@
+# --- secrets: never commit the real key ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+
+# --- frontend build / dependencies (reinstall with npm install) ---
+frontend/node_modules/
+frontend/dist/
+
+# --- temp files ---
+*.tmp
+*.json.tmp
+*.resetting
+.DS_Store
+
+# NOTE: data/campus_customs.db (original) and data/campus_customs_new.db (working copy)
+# are intentionally committed so graders can run the app right away.
+
+# the original data.zip download (duplicates data/campus_customs.db)
+data.zip
