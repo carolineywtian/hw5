@@ -418,3 +418,25 @@ Log of the prompts I typed to my vibe coder (Claude Code) while working through 
 > okay lets do the submission now - can you first run through everything to ensure that i get 100%
 
 (Every requirement from Problems 1–10 was rechecked: 33/33 pass. One risk was found and fixed: `output/mcp_smoke.json` from Problem 4 no longer matched the working DB after the tickets were resolved, so a `recheck_after_problem_9` section was added that re-runs the same 3 MCP tools against the current DB. All 12 values match, and the original evidence was kept.)
+
+---
+
+## Problem 11: Submit to GitHub
+
+**Prompt:**
+> Problem 11: Submit to Github
+>
+> Before pushing anything, make sure the expected file layout is according to the image and that I have all those files accurately
+>
+> Push my code to a public GitHub repository so grader can clone it. I need to submit the repo URL to Canvas, and also put it in output/github_url.txt. Do not push my real .env to the GitHub repo. DO include both database files under data/ (the original and my working copy) so graders can run my app easily.
+>
+> can we also check that the README should explain: copy original DB to the working copy when you need a clean run, start MCP server, start FastAPI backend, start React board, reset the DB before a full 3-ticket run
+
+(I also attached a screenshot of the expected file layout.)
+
+**Follow-up prompt** (answer to the vibe coder's question about the repo name):
+> hw5
+
+**What was lacking after the first prompt:** The prompt didn't name the repository, so I chose "hw5" to match the folder in the expected layout.
+
+**Submission notes:** The layout check found `.env.example`, `.gitignore`, `README.md` and `output/github_url.txt` missing; all were created. `.mcp.json` was switched from absolute Mac paths to relative ones so it works after cloning. The real `.env` (it lives outside the repo) and `data.zip` were excluded; both databases were included. A secret scan of the staged files found no key. The repo is https://github.com/carolineywtian/hw5.
